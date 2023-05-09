@@ -58,11 +58,11 @@ input:invalid{
 }
 #table
 {
-color:blueviolet;
 background-color:rgb(221, 228, 232);
 }
 #table1
 {
+background-color:rgb(221, 228, 232);
 display:none;
 }
 #details
