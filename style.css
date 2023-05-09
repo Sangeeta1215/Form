@@ -17,10 +17,6 @@ padding:40px;
 {
 margin:20px;
 }
-/* input[type="text"],[type="tel"],[type="email"]{
-    width:200px;
-    margin-right:30px;
-} */
 
 select{
 width:200px;
@@ -69,7 +65,7 @@ display:none;
 {
 display:none;
 }
-@media screen and (max-width:900px)
+@media screen and (max-width:600px)
 {
 .container1
 {
