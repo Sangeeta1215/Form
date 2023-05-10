@@ -8,7 +8,7 @@ submit.disabled=true;
 function nameValid()
     {
         const Name=document.getElementById("name").value;
-	   let pattern = /^[A-Z a-z]+ [A-Z a-z]+$/i;
+	   let pattern = /^[A-Z a-z]+$/i;
 	   if (pattern.test(Name))
 	   {
        n1=true;
@@ -40,18 +40,10 @@ function nameValid()
 	else
 	{
 	n3=false;
-    document.getElementById("email");
+    document.getElementById("email").focus();
      }  
 }
 
-function isValid()
-{
-if(n1==true && n2==true && n3==true &&genderValid() && languageValid() &&hobbyValid())
-{
-    console.log("HELLO HERE I AM")
-submit.disabled=false;
-}
-}
 
 
 function genderValid(){
@@ -93,5 +85,13 @@ else{
     return true;
 }
 }
+function isValid()
+{
+if(n1==true && n2==true && n3==true &&genderValid() && languageValid() &&hobbyValid())
+{
+submit.disabled=false;
+}
+}
+
 
    

@@ -4,6 +4,7 @@ display:flex;
 justify-content: space-around;
 align-items: center;
 padding:40px;
+/* border:1px solid black; */
 }
 .radio
 {
@@ -13,11 +14,14 @@ padding:40px;
     margin-bottom:10px;
     padding:10;
 }
+.btn2
+{
+display:none;
+}
 .paragraph
 {
 margin:20px;
 }
-
 select{
 width:200px;
 margin-right:30px;
@@ -42,15 +46,12 @@ margin-left:10px;
 {
 margin-left:10px
 }
-.btn1
+
+.button
 {
-display:none;
-}
-input:invalid{
-    background-color:ivory;
-    border:none;
-    outline:2px solid red;
-    border-radius:5px;
+margin:10px;
+height:30px;
+width:60px;
 }
 #table
 {
@@ -65,7 +66,7 @@ display:none;
 {
 display:none;
 }
-@media screen and (max-width:600px)
+@media screen and (max-width:900px)
 {
 .container1
 {
