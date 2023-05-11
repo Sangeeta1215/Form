@@ -1,10 +1,34 @@
+
 .container1
 {
 display:flex;
 justify-content: space-around;
 align-items: center;
-padding:40px;
-/* border:1px solid black; */
+padding:10;
+margin: auto;
+
+}
+.container2
+{
+
+    width:300px;
+    height:200px;
+    background-color:rgb(221, 228, 232);
+    padding:30px;
+    border:2px solid purple;
+}
+.container3
+{
+border:1px solid black;
+width:300px;
+height:400px;
+ padding:30px;
+  background-color:rgb(221, 228, 232);  
+  border:2px solid purple;
+}
+input[type=checkbox]
+{
+margin-left: 10px;
 }
 .radio
 {
@@ -34,9 +58,11 @@ margin:20px;
 }
 button
 {
-border-radius:5px;
-width:70px;
-height:40px;
+border-radius:10px;
+width:150px;
+height:70px;
+font-size:25px;
+margin-top: 40px;
 }
 .gender
 {
@@ -46,7 +72,20 @@ margin-left:10px;
 {
 margin-left:10px
 }
+input[type=text],input[type=email],input[type=tel],.radio,#hobby
 
+{
+width:450px;
+height:50px;
+font-size:30px;
+margin:10px;
+}
+
+input[type=radio],input[type=checkbox]
+{
+width:25px;
+height:25px;
+}
 .button
 {
 margin:10px;
@@ -60,18 +99,42 @@ background-color:rgb(221, 228, 232);
 #table1
 {
 background-color:rgb(221, 228, 232);
+width:100%;
 display:none;
 }
 #details
 {
 display:none;
 }
-@media screen and (max-width:900px)
+
+@media screen and (min-width:400px) 
 {
-.container1
-{
-display:flex;
-flex-direction: column;
-}
+    .container1
+    {
+    display:flex;
+    flex-direction:column;
+    padding:100px;
+    }
+     .container2
+    {
+        width:600px;
+        height:100px;
+        padding:40px;
+        text-align: center;
+       font-size: 60px;
+    }
+
+    .container3
+    {
+    
+    width:600px;
+    height:800px;
+     padding:40px;
+    } 
+    #table
+    {
+    font-size:50px;
+    }
+
 }
 

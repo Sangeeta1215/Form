@@ -6,13 +6,13 @@
 <body>
  <div class="container1">
 <form class="form" name="myform" onchange="isValid()">
-<div style="border:1px solid black;width:70%;height:4%;background-color:rgb(221, 228, 232);padding:30px" class="container2">
-<font size="5"><center>
+<div  class="container2">
+    <!-- <font size="7"><center> -->
 Registration Form
-</center></font>
+<!-- </center></font> -->
 </div>
-<div style="border:1px solid black;width:70%;height:70%; float:left;padding:30px;background-color:rgb(221, 228, 232)" class="container3">
-<font size="3">
+<div class="container3">
+    <font size="3">
 <p class="paragraph">
 <input type="text" name="Name" id="name" placeholder="enter your name" onblur="nameValid()"></p>
  <p class="paragraph">
@@ -20,13 +20,13 @@ Registration Form
 <p class="paragraph"> 
 <input type="email" name="Email" id="email" placeholder="enter your email" onblur="emailValid()"></p>
  
-<div class="radio">
+<div class="radio" id="radiobutton">
 <input type="Radio" 
 name="Gender" value="Male" id="male" class="gender">Male
 <input type="Radio"
 name="Gender" value="Female" id="female" class="gender">Female
 </div>
-<div class="radio">
+<div class="radio" id="checkbox">
 <input type="checkbox" name="Language" value="Java" id="Java" class="language">Java
 <input type="checkbox" name="Language" value="HTML" id="HTML" class="language">HTML
 <input type="checkbox" name="Language" value="C++" id="C++" class="language">C++
