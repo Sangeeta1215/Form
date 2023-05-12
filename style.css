@@ -15,7 +15,7 @@ margin: auto;
     height:200px;
     background-color:rgb(221, 228, 232);
     padding:30px;
-    border:2px solid purple;
+    border:2px solid black;
 }
 .container3
 {
@@ -24,7 +24,7 @@ width:300px;
 height:400px;
  padding:30px;
   background-color:rgb(221, 228, 232);  
-  border:2px solid purple;
+  border:2px solid black;
 }
 input[type=checkbox]
 {
