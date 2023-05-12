@@ -12,7 +12,7 @@ margin: auto;
 {
 
     width:300px;
-    height:200px;
+    height:30px;
     background-color:rgb(221, 228, 232);
     padding:30px;
     border:2px solid black;
@@ -20,9 +20,9 @@ margin: auto;
 .container3
 {
 border:1px solid black;
-width:300px;
-height:400px;
- padding:30px;
+width:400px;
+height:470px;
+ padding:0px;
   background-color:rgb(221, 228, 232);  
   border:2px solid black;
 }
@@ -35,7 +35,7 @@ margin-left: 10px;
     align-items:center;
     width:100%;
     height:0%;
-    margin-bottom:10px;
+    margin-bottom:5px;
     padding:10;
 }
 .btn2
@@ -75,26 +75,26 @@ margin-left:10px
 input[type=text],input[type=email],input[type=tel],.radio,#hobby
 
 {
-width:450px;
-height:50px;
-font-size:30px;
-margin:10px;
+width:300px;
+height:30px;
+font-size:20px;
+margin:3px;
 }
 input[type=text],input[type=email],input[type=tel],#hobby,#radiobutton,#checkbox
 {
-margin-left: 50px;
+margin-left: 20px;
 }
 
 input[type=radio],input[type=checkbox]
 {
-width:25px;
+width:13px;
 height:25px;
 }
-.button
+button
 {
 margin:10px;
-height:30px;
-width:60px;
+height:50px;
+width:150px;
 }
 #table
 {
@@ -117,28 +117,27 @@ display:none;
     {
     display:flex;
     flex-direction:column;
-    padding:100px;
+    padding:2px;
 
     }
      .container2
     {
-        width:600px;
-        height:100px;
-        padding:40px;
+        width:400px;
+        height:30px;
+        padding:30px;
         text-align: center;
-       font-size: 60px;
+       font-size: 40px;
     }
 
     .container3
     {
-    
-    width:600px;
-    height:800px;
-     padding:40px;
+    width:400px;
+    height:470px;
+     padding:30px;
     } 
     table
     {
-    font-size:50px;
+    font-size:35px;
     }
 };
 
