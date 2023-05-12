@@ -89,16 +89,16 @@ function update(value)
 {
    let record=localStorage.getItem('information');
    var ob=JSON.parse(record);
-   const dat=ob[value];
-   document.querySelector("#name").value=dat.Name;
-   document.querySelector("#number").value=dat.Number;
-   document.querySelector("#email").value=dat.Email;
+   const data=ob[value];
+   document.querySelector("#name").value=data.Name;
+   document.querySelector("#number").value=data.Number;
+   document.querySelector("#email").value=data.Email;
   
    const gender=document.getElementsByName("Gender");
    for(var i of gender)
    {
       console.log(i.value)
-   if(i.value==dat.Gender)
+   if(i.value==data.Gender)
    {
    i.checked=true;
    }
@@ -108,7 +108,7 @@ function update(value)
 const laanguage=document.getElementsByName("Language");
 for(var i of laanguage)
 {
-   for(var j of dat.Language)
+   for(var j of data.Language)
    {
 if(i.value==j)
 {
@@ -117,7 +117,7 @@ i.checked=true;
  }
 }
 const Hobby=document.getElementById('hobby');
-    Hobby.value=dat.Hobby;
+    Hobby.value=data.Hobby;
 
 
     const btn2=document.querySelector(".btn2");

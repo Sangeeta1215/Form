@@ -80,6 +80,10 @@ height:50px;
 font-size:30px;
 margin:10px;
 }
+input[type=text],input[type=email],input[type=tel],#hobby,#radiobutton,#checkbox
+{
+margin-left: 50px;
+}
 
 input[type=radio],input[type=checkbox]
 {
@@ -114,6 +118,7 @@ display:none;
     display:flex;
     flex-direction:column;
     padding:100px;
+
     }
      .container2
     {
