@@ -45,10 +45,9 @@ border-radius:5px;
 }
 #details
 {
-    
-    margin-top:40px;
+margin-top:40px;
 display:none;
-align-self: center;
+align-items:center;
 }
 
 .btn2
