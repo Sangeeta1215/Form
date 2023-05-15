@@ -33,11 +33,13 @@ margin:3px;
 }
 .radio
 {
-width:200px;
-margin:20px 0;
+
+width:300px;
+margin:20px 0px
 }
 button
 {
+  
 width:70px;
 height:30px;
 border-radius:5px;
