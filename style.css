@@ -33,19 +33,19 @@ margin:3px;
 }
 .radio
 {
-
 width:300px;
+height:30px;
 margin:20px 0px
 }
 button
 {
-  
 width:70px;
 height:30px;
 border-radius:5px;
 }
 #details
 {
+    
     margin-top:40px;
 display:none;
 align-self: center;
