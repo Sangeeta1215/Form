@@ -46,6 +46,7 @@ border-radius:5px;
 }
 #details
 {
+    margin-top:40px;
 display:none;
 align-self: center;
 }
