@@ -33,7 +33,9 @@ margin:3px;
 }
 .radio
 {
-width:300px;
+    border:1px solid black;
+
+width:200px;
 height:30px;
 margin:20px 0px
 }
