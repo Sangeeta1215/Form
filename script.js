@@ -82,7 +82,6 @@ e.preventDefault();
                localStorage.setItem('information',JSON.stringify(ob));
                showData();
                 }
-
 function update(value)
 {
    let record=localStorage.getItem('information');
@@ -113,15 +112,12 @@ i.checked=true;
 }
 const Hobby=document.getElementById('hobby');
     Hobby.value=data.Hobby;
-
-
     const btn2=document.querySelector(".btn2");
     const btn=document.querySelector(".btn")
     const btn1=document.querySelector(".btn1")
     btn.style.display="none";
     btn1.style.display="none";
    btn2.style.display="block";
-
    btn2.addEventListener("click",(e)=>{
     let formdata=new FormData(form);
  let values=[...formdata.entries()];

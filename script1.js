@@ -43,9 +43,6 @@ function nameValid()
     document.getElementById("email").focus();
      }  
 }
-
-
-
 function genderValid(){
     const Male=document.getElementById("male");
     const Female=document.getElementById("female");
@@ -90,6 +87,7 @@ function isValid()
 if(n1==true && n2==true && n3==true &&genderValid() && languageValid() &&hobbyValid())
 {
 submit.disabled=false;
+return true;
 }
 }
 
