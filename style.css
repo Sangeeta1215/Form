@@ -45,11 +45,21 @@ border-radius:5px;
 }
 #details
 {
+    padding:0;
 margin-top:40px;
 display:none;
 align-items:center;
 }
-
+#input
+{
+width:130px;
+}
+#choose
+{
+ width:130px;
+ height:28.7px;
+ margin-left:30px;
+}
 .btn2
 {
 display:none;
@@ -60,11 +70,8 @@ display:none;
 }
 table{
     background-color:rgb(221, 228, 232); 
-    font-size: 25px
+    font-size: 23px
 }
-
-
-
 @media only screen and (max-width:600px)
 {
     .container1

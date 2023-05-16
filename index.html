@@ -52,6 +52,12 @@ name="Gender" value="Female" id="female" class="gender">Female
 </form>
 <div id="details">
     <input type="text" placeholder="enter text to search" id="input">
+    <select name="select" id="choose" onchange="sorting()">
+        <option selected="">sort with</option>
+        <option>Name</option>
+        <option>Email</option>
+        <option>Number</option>
+        </select>
 <table border="2" id="table">
 <caption><h3>User Details</h3></caption>
     <tbody id="tbody">
@@ -61,6 +67,7 @@ name="Gender" value="Female" id="female" class="gender">Female
 <tbody id="tbody1">
 </tbody>
 </table>
+
 </div>
 </div>
 <script src="script.js"></script>

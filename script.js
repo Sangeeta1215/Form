@@ -25,15 +25,6 @@ show.addEventListener("click",(e) =>
     e.preventDefault();
    showData();
 }) 
-
-function deletion(value)
-{
-     let record=localStorage.getItem('information');
-     var ob=JSON.parse(record);
-     ob.splice(value,1);
-     localStorage.setItem('information',JSON.stringify(ob));
-     showData();
-}
 function showData()
     {
     let record=localStorage.getItem('information');
@@ -43,7 +34,7 @@ function showData()
     {
        for(j in ob[i] )
             {
-                console.log(ob[i]+":"+ob[i][j]);
+   
                document.querySelector("tbody").innerHTML+=`<td>${j}</td> <td> ${ob[i][j]}</td>`;
             }
             document.querySelector("tbody").innerHTML+=`<td colspan='2'><button class='update' onclick='update(${i})'>Update</button> <button class='delete' onclick='deletion(${i})'>Delete</button></td>`;
@@ -66,24 +57,31 @@ e.preventDefault();
  {
     table1.innerHTML=""
  }
-    for(i of ob)
-    {
-        var data=i.Name;
-                var txtValue=data.toUpperCase();
+   for(i of ob)
+   {
+     var data=i.Name;
+     var txtValue=data.toUpperCase();
                 
-                if (txtValue.indexOf(filter)>-1)
-                 {
-                    for(j in i )
-                  {
-                    table1.innerHTML+=`<td>${j}</td> <td> ${i[j]}</td>`;
-                 }
-                 table1.innerHTML+="<br>";
+       if (txtValue.indexOf(filter)>-1)
+         {
+           for(j in i )
+         {
+             table1.innerHTML+=`<td>${j}</td> <td> ${i[j]}</td>`;
+         }
+          table1.innerHTML+="<br>";
+       }
+          }
+          document.querySelector("table").style.display="none";
+          table1.style.display="block";
+         } )
+         function deletion(value)
+         {
+             let record=localStorage.getItem('information');
+               var ob=JSON.parse(record);
+               ob.splice(value,1);
+               localStorage.setItem('information',JSON.stringify(ob));
+               showData();
                 }
-                  }
-                  document.querySelector("table").style.display="none";
-                  table1.style.display="block";
-                } )
- 
 
 function update(value)
 {
@@ -97,14 +95,11 @@ function update(value)
    const gender=document.getElementsByName("Gender");
    for(var i of gender)
    {
-      console.log(i.value)
    if(i.value==data.Gender)
    {
    i.checked=true;
    }
    }
-
-
 const laanguage=document.getElementsByName("Language");
 for(var i of laanguage)
 {
@@ -134,10 +129,74 @@ const Hobby=document.getElementById('hobby');
  obj.Language=formdata.getAll("Language");            
  ob[value]=obj;
  localStorage.setItem('information',JSON.stringify(ob));
-   })
+  })
 }
+var select=document.querySelector("#choose")
+function sorting()
+{
+   
+   let record=localStorage.getItem('information');
+     var ob=JSON.parse(record);
+     if(select.value=="Name")
+     {
+     ob.sort(function(a,b)
+     {
+    if(a.Name.toLowerCase()<b.Name.toLowerCase())
+    {
+     return -1;
+    }
+   if(a.Name.toUpperCase()>b.Name.toLowerCase())
+   {
+   return 1;
+    }
+    return 0;
+     });
+     sortedData(ob);
+     }
+     if(select.value=="Number")
+     {
+      ob.sort(function(a,b)
+      {
+         if(a.Number.toLowerCase()<b.Number.toLowerCase())
+         {
+          return -1;
+         }
+        if(a.Number.toUpperCase()>b.Number.toLowerCase())
+        {
+        return 1;
+         }
+         return 0;
+          });
+          sortedData(ob);   
+     }
+     if(select.value=="Email")
+     ob.sort(function(a,b)
+      {
+         if(a.Email.toLowerCase()<b.Email.toLowerCase())
+         {
+          return -1;
+         }
+        if(a.Email.toUpperCase()>b.Email.toLowerCase())
+        {
+        return 1;
+         }
+         return 0;
+          });
+          sortedData(ob);   
+}
+function sortedData(ob)
+{
+ console.log(ob);
+document.querySelector("tbody").innerHTML="";
+    for(i in ob)
+    {
+       for(j in ob[i] )
+            {
+   
+               document.querySelector("tbody").innerHTML+=`<td>${j}</td> <td> ${ob[i][j]}</td>`;
+            }
+            document.querySelector("tbody").innerHTML+=`<td colspan='2'><button class='update' onclick='update(${i})'>Update</button> <button class='delete' onclick='deletion(${i})'>Delete</button></td>`;
 
-
-
-
-
+            document.querySelector("tbody").innerHTML+="<br>";
+        }
+}
