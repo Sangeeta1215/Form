@@ -12,6 +12,7 @@ function nameValid()
 	   if (pattern.test(Name))
 	   {
        n1=true;
+       return true;
 	   }
 	  else
 	 {
@@ -23,7 +24,8 @@ function nameValid()
         const Number=document.getElementById("number").value;
         if(Number.length==10)
     {
-        n2=true;  
+        n2=true; 
+        return true; 
     }
     else{
        n2=false; 
@@ -36,6 +38,7 @@ function nameValid()
    if(pattern.test(Email))
 	{
 	n3=true;
+    return true;
 	}
 	else
 	{
@@ -71,7 +74,6 @@ return true;
     return false;
     }
 }
-
 function hobbyValid(){
     const Hobby=document.myform.Hobby.value;
     if(Hobby=="")
@@ -87,7 +89,6 @@ function isValid()
 if(n1==true && n2==true && n3==true &&genderValid() && languageValid() &&hobbyValid())
 {
 submit.disabled=false;
-return true;
 }
 }
 

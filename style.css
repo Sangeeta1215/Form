@@ -68,9 +68,15 @@ display:none;
     display:flex;
     justify-content:space-around
 }
-table{
+#table{
     background-color:rgb(221, 228, 232); 
     font-size: 23px
+}
+#table1
+{
+    background-color:rgb(221, 228, 232); 
+    font-size: 23px;
+   width:340px; 
 }
 @media only screen and (max-width:600px)
 {

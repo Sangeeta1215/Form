@@ -3,7 +3,6 @@ const submit=document.querySelector('.btn');
 const show=document.querySelector('.btn1');
 submit.addEventListener("click",(e)=>
 {  
- 
  let formdata=new FormData(form);
  let values=[...formdata.entries()];
  let obj=Object.fromEntries(values);
@@ -32,7 +31,6 @@ function showData()
     data(ob);
         document.getElementById("details").style.display="block";
       }
-
 const input=document.getElementById("input");
 const table1=document.getElementById("table1");
 const tbody1=document.getElementById("tbody1");
@@ -58,6 +56,8 @@ e.preventDefault();
          {
              table1.innerHTML+=`<td>${j}</td> <td> ${i[j]}</td>`;
          }
+         table1.innerHTML+=`<td colspan='2'><button class='update' onclick='update(${i})'>Update</button> <button class='delete' onclick='deletion(${i})'>Delete</button></td>`;
+
           table1.innerHTML+="<br>";
        }
           }
@@ -100,7 +100,7 @@ i.checked=true;
 }
  }
 }
-const Hobby=document.getElementById('hobby');
+    const Hobby=document.getElementById('hobby');
     Hobby.value=data.Hobby;
     const btn2=document.querySelector(".btn2");
     const btn=document.querySelector(".btn")
@@ -109,12 +109,17 @@ const Hobby=document.getElementById('hobby');
     btn1.style.display="none";
    btn2.style.display="block";
    btn2.addEventListener("click",(e)=>{
+    e.preventDefault();
     let formdata=new FormData(form);
  let values=[...formdata.entries()];
  let obj=Object.fromEntries(values);
  obj.Language=formdata.getAll("Language");            
  ob[value]=obj;
- localStorage.setItem('information',JSON.stringify(ob));
+ if(nameValid() && phoneNumberValid() && emailValid() && genderValid() && languageValid() && hobbyValid())
+      {
+        localStorage.setItem('information',JSON.stringify(ob));
+      }
+      showData();
   })
 }
 var select=document.querySelector("#choose")
@@ -127,46 +132,20 @@ function sorting()
      {
      ob.sort(function(a,b)
      {
-    if(a.Name.toLowerCase()<b.Name.toLowerCase())
-    {
-     return -1;
-    }
-   if(a.Name.toUpperCase()>b.Name.toLowerCase())
-   {
-   return 1;
-    }
-    return 0;
+      return fn(a.Name.toLowerCase(),b.Name.toLowerCase());
      });
-     data(ob);
      }
      if(select.value=="Number")
      {
       ob.sort(function(a,b)
       {
-         if(a.Number.toLowerCase()<b.Number.toLowerCase())
-         {
-          return -1;
-         }
-        if(a.Number.toUpperCase()>b.Number.toLowerCase())
-        {
-        return 1;
-         }
-         return 0;
-          });
-          data(ob);   
+         return fn(a.Number,b.Number);
+          }); 
      }
      if(select.value=="Email")
      ob.sort(function(a,b)
       {
-         if(a.Email.toLowerCase()<b.Email.toLowerCase())
-         {
-          return -1;
-         }
-        if(a.Email.toUpperCase()>b.Email.toLowerCase())
-        {
-        return 1;
-         }
-         return 0;
+         return fn(a.Email.toLowerCase(),b.Email.toLowerCase());
           });
           data(ob);   
 }
@@ -177,8 +156,7 @@ document.querySelector("tbody").innerHTML="";
     {
        for(j in ob[i] )
             {
-   
-               document.querySelector("tbody").innerHTML+=`<td>${j}</td> <td> ${ob[i][j]}</td>`;
+     document.querySelector("tbody").innerHTML+=`<td>${j}</td> <td> ${ob[i][j]}</td>`;
             }
             document.querySelector("tbody").innerHTML+=`<td colspan='2'><button class='update' onclick='update(${i})'>Update</button> <button class='delete' onclick='deletion(${i})'>Delete</button></td>`;
 
@@ -186,3 +164,16 @@ document.querySelector("tbody").innerHTML="";
         }
         localStorage.setItem('information',JSON.stringify(ob));
 }
+
+function fn(a,b)
+{
+ if(a<b)
+   {
+    return -1;
+   }
+  if(a>b)
+  {
+  return 1;
+   }
+   return 0;
+    }
