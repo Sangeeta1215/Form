@@ -182,7 +182,6 @@ function sorting()
 }
 function sortedData(ob)
 {
- console.log(ob);
 document.querySelector("tbody").innerHTML="";
     for(i in ob)
     {
@@ -195,4 +194,5 @@ document.querySelector("tbody").innerHTML="";
 
             document.querySelector("tbody").innerHTML+="<br>";
         }
+        localStorage.setItem('information',JSON.stringify(ob));
 }
