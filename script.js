@@ -29,19 +29,9 @@ function showData()
     {
     let record=localStorage.getItem('information');
     var ob=JSON.parse(record);
-    document.querySelector("tbody").innerHTML="";
-    for(i in ob)
-    {
-       for(j in ob[i] )
-            {
-   
-               document.querySelector("tbody").innerHTML+=`<td>${j}</td> <td> ${ob[i][j]}</td>`;
-            }
-            document.querySelector("tbody").innerHTML+=`<td colspan='2'><button class='update' onclick='update(${i})'>Update</button> <button class='delete' onclick='deletion(${i})'>Delete</button></td>`;
-
-            document.querySelector("tbody").innerHTML+="<br>";
-        }
-        document.getElementById("details").style.display="block";}
+    data(ob);
+        document.getElementById("details").style.display="block";
+      }
 
 const input=document.getElementById("input");
 const table1=document.getElementById("table1");
@@ -147,7 +137,7 @@ function sorting()
     }
     return 0;
      });
-     sortedData(ob);
+     data(ob);
      }
      if(select.value=="Number")
      {
@@ -163,7 +153,7 @@ function sorting()
          }
          return 0;
           });
-          sortedData(ob);   
+          data(ob);   
      }
      if(select.value=="Email")
      ob.sort(function(a,b)
@@ -178,9 +168,9 @@ function sorting()
          }
          return 0;
           });
-          sortedData(ob);   
+          data(ob);   
 }
-function sortedData(ob)
+function data(ob)
 {
 document.querySelector("tbody").innerHTML="";
     for(i in ob)
