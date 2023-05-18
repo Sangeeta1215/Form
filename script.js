@@ -47,19 +47,16 @@ e.preventDefault();
  }
    for(i of ob)
    {
-     var data=i.Name;
-     var txtValue=data.toUpperCase();
-                
-       if (txtValue.indexOf(filter)>-1)
-         {
+      var data=i.Name;
+       var txtValue=data.toUpperCase();
            for(j in i )
          {
-             table1.innerHTML+=`<td>${j}</td> <td> ${i[j]}</td>`;
+            if (txtValue.indexOf(filter)>-1) 
+            {
+          table1.innerHTML+=`<td>${j}</td> <td> ${i[j]}</td>`;
          }
-         table1.innerHTML+=`<td colspan='2'><button class='update' onclick='update(${i})'>Update</button> <button class='delete' onclick='deletion(${i})'>Delete</button></td>`;
-
-          table1.innerHTML+="<br>";
        }
+       table1.innerHTML+='<br>'
           }
           document.querySelector("table").style.display="none";
           table1.style.display="block";
@@ -140,7 +137,7 @@ function sorting()
       ob.sort(function(a,b)
       {
          return fn(a.Number,b.Number);
-          }); 
+    }); 
      }
      if(select.value=="Email")
      ob.sort(function(a,b)
